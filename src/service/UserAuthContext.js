@@ -30,10 +30,7 @@ export function UserAuthContextProvider({ children }) {
     const unsub = onAuthStateChanged(auth, (curruser) => {
       setUser(curruser);
     });
-    return () => {
-      unsub();
-    };
-  }, []);
+  }, [user]);
 
   return (
     <userAuthContext.Provider
